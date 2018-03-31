@@ -77,21 +77,21 @@ public class MysqlStudentDao implements StudentDao {
 						student.setMeno(rs.getString("meno"));
 						student.setPriezvisko(rs.getString("priezvisko"));
 						student.setKodpohlavie(rs.getString("kodpohlavie").charAt(0));
-						student.setSkratkaakadtitul(rs.getString("skratkaakadtitul"));
+						student.setSkratkaakadtitul(rs.getString("skratkaakadtitul").trim());
 						students.add(student);
 					}
 					Studium studium = new Studium();
 					studium.setId(rs.getLong("studiumid"));
-					studium.setZaciatokStudia(rs.getString("zaciatokStudia"));
-					studium.setKoniecStudia(rs.getString("koniecStudia"));
+					studium.setZaciatokStudia(rs.getString("zaciatokStudia").trim());
+					studium.setKoniecStudia(rs.getString("koniecStudia").trim());
 
 					long idProgram = rs.getLong("studijnyprogramid");
 					StudijnyProgram program = programs.get(idProgram);
 					if (program == null) {
 						program = new StudijnyProgram();
 						program.setId(idProgram);
-						program.setPopis(rs.getString("popis"));
-						program.setSkratka(rs.getString("skratka"));
+						program.setPopis(rs.getString("popis").trim());
+						program.setSkratka(rs.getString("skratka").trim());
 						programs.put(idProgram, program);
 					}
 					studium.setStudijnyProgram(program);

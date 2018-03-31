@@ -1,8 +1,9 @@
-package sk.gursky;
+package sk.gursky.student;
 
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Session;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
 import org.springframework.data.cassandra.core.cql.CqlTemplate;
@@ -10,12 +11,12 @@ import org.springframework.data.cassandra.repository.config.EnableCassandraRepos
 
 @Configuration
 @EnableCassandraRepositories
+@ComponentScan(basePackages = "sk.gursky.student")
 public class CassandraConfig extends AbstractCassandraConfiguration {
 
     private static final String HOSTNAME = "nosql.gursky.sk";
     private static final String KEY_SPACE = "pekarcik";
 
-    @Bean
     public Session getSession() {
         Cluster cluster = Cluster.builder().addContactPoint(HOSTNAME).build();
         return cluster.connect(KEY_SPACE);

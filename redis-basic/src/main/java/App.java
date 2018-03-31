@@ -2,9 +2,9 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.support.atomic.RedisAtomicInteger;
-import sk.gursky.nosql.aislike.DaoFactory;
-import sk.gursky.nosql.aislike.StudentDao;
-import sk.gursky.nosql.aislike.entity.SimpleStudent;
+import sk.gursky.simplestudent.nosql.aislike.DaoFactory;
+import sk.gursky.simplestudent.nosql.aislike.StudentDao;
+import sk.gursky.simplestudent.nosql.aislike.entity.SimpleStudent;
 
 import java.util.List;
 

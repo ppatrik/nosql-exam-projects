@@ -6,17 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cassandra-basic" />
         <module name="cassandra-repository" />
         <module name="cassandrarepository" />
+        <module name="neo4j-basic" />
         <module name="redisbasic" />
         <module name="studentrepository" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cassandra-basic" target="1.5" />
-      <module name="cassandra-repository" target="1.5" />
+      <module name="cassandra-repository" target="1.8" />
       <module name="cassandrarepository" target="1.5" />
+      <module name="formaty" target="1.8" />
       <module name="formaty-nosql" target="1.8" />
+      <module name="mongo-repository" target="1.8" />
+      <module name="neo4j-basic" target="1.5" />
       <module name="redis-chat" target="1.8" />
       <module name="redisbasic" target="1.5" />
       <module name="redischat" target="1.8" />
@@ -26,7 +31,9 @@
   </component>
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cassandra-repository" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/formaty-nosql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mongo-repository" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/redis-basic" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/redis-chat" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/redis-repository" charset="UTF-8" />
@@ -43,6 +50,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/formaty/pom.xml" />
         <option value="$PROJECT_DIR$/cassandra-repository/pom.xml" />
+        <option value="$PROJECT_DIR$/cassandra-basic/pom.xml" />
+        <option value="$PROJECT_DIR$/neo4j-basic/pom.xml" />
+        <option value="$PROJECT_DIR$/mongo-repository/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -178,9 +188,9 @@
       <module fileurl="file://$PROJECT_DIR$/cassandra-basic/cassandra-basic.iml" filepath="$PROJECT_DIR$/cassandra-basic/cassandra-basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/cassandra-repository/cassandra-repository.iml" filepath="$PROJECT_DIR$/cassandra-repository/cassandra-repository.iml" />
       <module fileurl="file://$PROJECT_DIR$/formaty-nosql/formaty.iml" filepath="$PROJECT_DIR$/formaty-nosql/formaty.iml" />
-      <module fileurl="file://$PROJECT_DIR$/formaty-nosql/formaty-nosql.iml" filepath="$PROJECT_DIR$/formaty-nosql/formaty-nosql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongo-repository/mongo-repository.iml" filepath="$PROJECT_DIR$/mongo-repository/mongo-repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/neo4j-basic/neo4j-basic.iml" filepath="$PROJECT_DIR$/neo4j-basic/neo4j-basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis-basic/redis-basic.iml" filepath="$PROJECT_DIR$/redis-basic/redis-basic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/redis-chat/redis-chat.iml" filepath="$PROJECT_DIR$/redis-chat/redis-chat.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis-repository/redis-repository.iml" filepath="$PROJECT_DIR$/redis-repository/redis-repository.iml" />
     </modules>
   </component>
@@ -601,17 +611,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/io/dropwizard/metrics/metrics-core/3.2.2/metrics-core-3.2.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: io.lettuce:lettuce-core:5.0.0.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/lettuce/lettuce-core/5.0.0.RELEASE/lettuce-core-5.0.0.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/io/lettuce/lettuce-core/5.0.0.RELEASE/lettuce-core-5.0.0.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/lettuce/lettuce-core/5.0.0.RELEASE/lettuce-core-5.0.0.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: io.netty:netty-buffer:4.0.47.Final">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-buffer/4.0.47.Final/netty-buffer-4.0.47.Final.jar!/" />
@@ -621,17 +620,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-buffer/4.0.47.Final/netty-buffer-4.0.47.Final-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: io.netty:netty-buffer:4.1.15.Final">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-buffer/4.1.15.Final/netty-buffer-4.1.15.Final.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-buffer/4.1.15.Final/netty-buffer-4.1.15.Final-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-buffer/4.1.15.Final/netty-buffer-4.1.15.Final-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: io.netty:netty-codec:4.0.47.Final">
@@ -645,17 +633,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-codec/4.0.47.Final/netty-codec-4.0.47.Final-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: io.netty:netty-codec:4.1.15.Final">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-codec/4.1.15.Final/netty-codec-4.1.15.Final.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-codec/4.1.15.Final/netty-codec-4.1.15.Final-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-codec/4.1.15.Final/netty-codec-4.1.15.Final-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: io.netty:netty-common:4.0.47.Final">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-common/4.0.47.Final/netty-common-4.0.47.Final.jar!/" />
@@ -665,17 +642,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-common/4.0.47.Final/netty-common-4.0.47.Final-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: io.netty:netty-common:4.1.15.Final">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-common/4.1.15.Final/netty-common-4.1.15.Final.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-common/4.1.15.Final/netty-common-4.1.15.Final-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-common/4.1.15.Final/netty-common-4.1.15.Final-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: io.netty:netty-handler:4.0.47.Final">
@@ -689,28 +655,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-handler/4.0.47.Final/netty-handler-4.0.47.Final-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: io.netty:netty-handler:4.1.15.Final">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-handler/4.1.15.Final/netty-handler-4.1.15.Final.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-handler/4.1.15.Final/netty-handler-4.1.15.Final-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-handler/4.1.15.Final/netty-handler-4.1.15.Final-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: io.netty:netty-resolver:4.1.15.Final">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-resolver/4.1.15.Final/netty-resolver-4.1.15.Final.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-resolver/4.1.15.Final/netty-resolver-4.1.15.Final-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-resolver/4.1.15.Final/netty-resolver-4.1.15.Final-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: io.netty:netty-transport:4.0.47.Final">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.0.47.Final/netty-transport-4.0.47.Final.jar!/" />
@@ -722,28 +666,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.0.47.Final/netty-transport-4.0.47.Final-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: io.netty:netty-transport:4.1.15.Final">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.1.15.Final/netty-transport-4.1.15.Final.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.1.15.Final/netty-transport-4.1.15.Final-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.1.15.Final/netty-transport-4.1.15.Final-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: io.projectreactor:reactor-core:3.1.0.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/projectreactor/reactor-core/3.1.0.RELEASE/reactor-core-3.1.0.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/io/projectreactor/reactor-core/3.1.0.RELEASE/reactor-core-3.1.0.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/projectreactor/reactor-core/3.1.0.RELEASE/reactor-core-3.1.0.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: javax.annotation:javax.annotation-api:1.3.2">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar!/" />
@@ -753,17 +675,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: junit:junit:3.8.1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: mysql:mysql-connector-java:5.1.45">
@@ -843,6 +754,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.mongodb:mongo-java-driver:3.6.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.ow2.asm:asm-analysis:5.0.3">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.jar!/" />
@@ -896,17 +818,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/ow2/asm/asm/5.0.3/asm-5.0.3-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.reactivestreams:reactive-streams:1.0.1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/reactivestreams/reactive-streams/1.0.1/reactive-streams-1.0.1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/reactivestreams/reactive-streams/1.0.1/reactive-streams-1.0.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/reactivestreams/reactive-streams/1.0.1/reactive-streams-1.0.1-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.slf4j:jul-to-slf4j:1.7.25">
@@ -997,17 +908,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.5.RELEASE/spring-data-cassandra-2.0.5.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.springframework.data:spring-data-commons:2.0.3.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.3.RELEASE/spring-data-commons-2.0.3.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.3.RELEASE/spring-data-commons-2.0.3.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.3.RELEASE/spring-data-commons-2.0.3.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: org.springframework.data:spring-data-commons:2.0.5.RELEASE">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.5.RELEASE/spring-data-commons-2.0.5.RELEASE.jar!/" />
@@ -1017,17 +917,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.5.RELEASE/spring-data-commons-2.0.5.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.springframework.data:spring-data-keyvalue:2.0.3.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-keyvalue/2.0.3.RELEASE/spring-data-keyvalue-2.0.3.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-keyvalue/2.0.3.RELEASE/spring-data-keyvalue-2.0.3.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-keyvalue/2.0.3.RELEASE/spring-data-keyvalue-2.0.3.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.springframework.data:spring-data-keyvalue:2.0.5.RELEASE">
@@ -1041,15 +930,15 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-keyvalue/2.0.5.RELEASE/spring-data-keyvalue-2.0.5.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.springframework.data:spring-data-redis:2.0.3.RELEASE">
+    <library name="Maven: org.springframework.data:spring-data-mongodb:2.0.5.RELEASE">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.0.3.RELEASE/spring-data-redis-2.0.3.RELEASE.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/2.0.5.RELEASE/spring-data-mongodb-2.0.5.RELEASE.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.0.3.RELEASE/spring-data-redis-2.0.3.RELEASE-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/2.0.5.RELEASE/spring-data-mongodb-2.0.5.RELEASE-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.0.3.RELEASE/spring-data-redis-2.0.3.RELEASE-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/2.0.5.RELEASE/spring-data-mongodb-2.0.5.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.springframework.data:spring-data-redis:2.0.5.RELEASE">
@@ -1061,17 +950,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.0.5.RELEASE/spring-data-redis-2.0.5.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.springframework:spring-aop:5.0.3.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.3.RELEASE/spring-aop-5.0.3.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.3.RELEASE/spring-aop-5.0.3.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.3.RELEASE/spring-aop-5.0.3.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.springframework:spring-aop:5.0.4.RELEASE">
@@ -1096,17 +974,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.1.RELEASE/spring-beans-5.0.1.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.springframework:spring-beans:5.0.3.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.3.RELEASE/spring-beans-5.0.3.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.3.RELEASE/spring-beans-5.0.3.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.3.RELEASE/spring-beans-5.0.3.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: org.springframework:spring-beans:5.0.4.RELEASE">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.4.RELEASE/spring-beans-5.0.4.RELEASE.jar!/" />
@@ -1118,17 +985,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.4.RELEASE/spring-beans-5.0.4.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.springframework:spring-context-support:5.0.3.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.0.3.RELEASE/spring-context-support-5.0.3.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.0.3.RELEASE/spring-context-support-5.0.3.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.0.3.RELEASE/spring-context-support-5.0.3.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: org.springframework:spring-context-support:5.0.4.RELEASE">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.0.4.RELEASE/spring-context-support-5.0.4.RELEASE.jar!/" />
@@ -1138,17 +994,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.0.4.RELEASE/spring-context-support-5.0.4.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.springframework:spring-context:5.0.3.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.3.RELEASE/spring-context-5.0.3.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.3.RELEASE/spring-context-5.0.3.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.3.RELEASE/spring-context-5.0.3.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.springframework:spring-context:5.0.4.RELEASE">
@@ -1173,17 +1018,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.1.RELEASE/spring-core-5.0.1.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.springframework:spring-core:5.0.3.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.3.RELEASE/spring-core-5.0.3.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.3.RELEASE/spring-core-5.0.3.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.3.RELEASE/spring-core-5.0.3.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: org.springframework:spring-core:5.0.4.RELEASE">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.4.RELEASE/spring-core-5.0.4.RELEASE.jar!/" />
@@ -1193,17 +1027,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.4.RELEASE/spring-core-5.0.4.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.springframework:spring-expression:5.0.3.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/5.0.3.RELEASE/spring-expression-5.0.3.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/5.0.3.RELEASE/spring-expression-5.0.3.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/5.0.3.RELEASE/spring-expression-5.0.3.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.springframework:spring-expression:5.0.4.RELEASE">
@@ -1226,17 +1049,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jcl/5.0.1.RELEASE/spring-jcl-5.0.1.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.springframework:spring-jcl:5.0.3.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jcl/5.0.3.RELEASE/spring-jcl-5.0.3.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jcl/5.0.3.RELEASE/spring-jcl-5.0.3.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jcl/5.0.3.RELEASE/spring-jcl-5.0.3.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.springframework:spring-jcl:5.0.4.RELEASE">
@@ -1272,17 +1084,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/5.0.4.RELEASE/spring-jdbc-5.0.4.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.springframework:spring-oxm:5.0.3.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-oxm/5.0.3.RELEASE/spring-oxm-5.0.3.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-oxm/5.0.3.RELEASE/spring-oxm-5.0.3.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-oxm/5.0.3.RELEASE/spring-oxm-5.0.3.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: org.springframework:spring-oxm:5.0.4.RELEASE">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-oxm/5.0.4.RELEASE/spring-oxm-5.0.4.RELEASE.jar!/" />
@@ -1303,17 +1104,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.0.1.RELEASE/spring-tx-5.0.1.RELEASE-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.springframework:spring-tx:5.0.3.RELEASE">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.0.3.RELEASE/spring-tx-5.0.3.RELEASE.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.0.3.RELEASE/spring-tx-5.0.3.RELEASE-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.0.3.RELEASE/spring-tx-5.0.3.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.springframework:spring-tx:5.0.4.RELEASE">

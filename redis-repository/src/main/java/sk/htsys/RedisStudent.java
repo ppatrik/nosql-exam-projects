@@ -2,8 +2,8 @@ package sk.htsys;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
-import sk.gursky.nosql.aislike.entity.Student;
-import sk.gursky.nosql.aislike.entity.Studium;
+import sk.gursky.simplestudent.nosql.aislike.entity.Student;
+import sk.gursky.simplestudent.nosql.aislike.entity.Studium;
 
 import java.util.ArrayList;
 import java.util.List;

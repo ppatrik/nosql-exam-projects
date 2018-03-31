@@ -1,6 +1,6 @@
 
 import org.springframework.data.redis.core.HashOperations;
-import sk.gursky.nosql.aislike.entity.SimpleStudent;
+import sk.gursky.simplestudent.nosql.aislike.entity.SimpleStudent;
 
 import java.util.List;
 

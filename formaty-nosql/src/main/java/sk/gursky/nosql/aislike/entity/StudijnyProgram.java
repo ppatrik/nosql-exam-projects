@@ -28,6 +28,6 @@ public class StudijnyProgram implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "StudijnyProgram [id=" + id + ", skratka=" + skratka.trim() + ", popis=" + popis.trim() + "]";
+		return "StudijnyProgram [id=" + id + ", skratka=" + skratka + ", popis=" + popis + "]";
 	}	
 }

@@ -34,7 +34,7 @@ public class Studium implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Studium [id=" + id + ", zaciatokStudia=" + zaciatokStudia.trim() + ", koniecStudia=" + koniecStudia.trim()
+		return "Studium [id=" + id + ", zaciatokStudia=" + zaciatokStudia + ", koniecStudia=" + koniecStudia
 				+ ", studijnyProgram=" + studijnyProgram + "]";
 	}
 }

@@ -8,6 +8,17 @@
     <artifactId>cassandra-repository</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <modules>
+        <module>../formaty-nosql</module>
+    </modules>
+
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-cassandra -->
@@ -30,6 +41,12 @@
             <artifactId>spring-data-cassandra</artifactId>
             <version>2.0.5.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>gursky.sk</groupId>
+            <artifactId>formaty-nosql</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
-    
+
 </project>

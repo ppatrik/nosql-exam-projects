@@ -4,11 +4,16 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 
+import sk.gursky.nosql.crawl.DownloadDao;
+import sk.gursky.nosql.crawl.MysqlDownloadDao;
+import sk.gursky.nosql.crawl.entity.Download;
+
 public enum DaoFactory {
 	INSTANCE;
 	
 	private JdbcTemplate jdbcTemplate;
 	private StudentDao studentDao;
+	private DownloadDao downloadDao;
 	
 	public synchronized JdbcTemplate getJDBCTemplate2() {
 		if (jdbcTemplate == null) {
@@ -39,5 +44,12 @@ public enum DaoFactory {
 			studentDao = new MysqlStudentDao(getJDBCTemplate());
 		}
 		return studentDao;
+	}
+	
+	public synchronized DownloadDao getDownloadDao() {
+		if (downloadDao == null) {
+			downloadDao = new MysqlDownloadDao(getJDBCTemplate());
+		}
+		return downloadDao;
 	}
 }

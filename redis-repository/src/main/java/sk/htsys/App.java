@@ -3,9 +3,9 @@ package sk.htsys;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import sk.gursky.nosql.aislike.DaoFactory;
-import sk.gursky.nosql.aislike.StudentDao;
-import sk.gursky.nosql.aislike.entity.Student;
+import sk.gursky.simplestudent.nosql.aislike.DaoFactory;
+import sk.gursky.simplestudent.nosql.aislike.StudentDao;
+import sk.gursky.simplestudent.nosql.aislike.entity.Student;
 
 import java.util.List;
 import java.util.stream.Collectors;

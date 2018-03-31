@@ -1,10 +1,9 @@
-package sk.gursky;
+package sk.gursky.simplestudent;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import com.datastax.driver.core.*;
 import com.datastax.driver.core.exceptions.DriverException;
-import com.datastax.driver.core.querybuilder.Batch;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.cassandra.core.cql.CqlTemplate;
@@ -22,7 +21,6 @@ public class App {
     public static void main(String[] args) {
         Logger logger = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
         logger.setLevel(Level.WARN);
-
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(CassandraConfig.class);
 
         // Ziskanie beanov
@@ -93,7 +91,6 @@ public class App {
         System.out.println("Zmazanie tabuľky");
         DropTableSpecification droper = DropTableSpecification.dropTable("test_table_2");
         cqlTemplate.execute(DropTableCqlGenerator.toCql(droper));
-
 
         session.getCluster().close();
 
